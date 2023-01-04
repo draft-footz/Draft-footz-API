@@ -1,5 +1,7 @@
 {
   "users": 600,
   "teams": 644,
-  "tournaments": 664
+  "/teams/:id/players": "/teams/:id/",
+  "tournaments": 644,
+  "participating": 664
 }

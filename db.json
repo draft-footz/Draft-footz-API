@@ -1,195 +1,205 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "email": "admin@gmail.com",
-            "password": "$2a$10$YQiiz0ANVwIgpOjYXPxc0O9H2XeX3m8OoY1xk7OGgxTnOJnsZU7FO",
-            "name": "admin",
-            "contact": "00000000"
-        },
-        {
-            "email": "test@gmail.com",
-            "password": "$2a$10$JcuPOvTtXI2OwKTFB/0Ve.DCkJO6ICcxxOtFQLY3YmuwOqLgcF6rO",
-            "name": "admin",
-            "contact": "00000000",
-            "id": 2
-        }
-    ],
-    "teams": [
-        {
-            "id": 1,
-            "userId": 1,
-            "name": "x",
-            "logo": "url",
-            "players": [
-                {
-                    "id": 1,
-                    "name": "nei",
-                    "avatar": "url",
-                    "contact": "00000000",
-                    "age": 10
-                }
-            ]
-        }
-    ],
-    "tournaments": [ 
-        {
-            "id": 1,
-            "ownerId": 1,
-            "name": "Copa do Brasil",
-            "type": "Qualify",
-            "numberOfTeams": 6,
-            "inProgress": true,
-            "champion": null,
-            "matches": [
-                {
-                    "id": 1,
-                    "order": 1,
-                    "teamA": 4,
-                    "teamB": 5,
-                    "winner": 4,
-                    "score": {
-                        "regular": {
-                            "teamA": 3,
-                            "teamB": 3
-                        },
-                        "penalties": {
-                            "teamA": 5,
-                            "teamB": 4
-                        }
-                    }
-                },
-                {
-                    "id": 2,
-                    "order": 2,
-                    "teamA": null,
-                    "teamB": null,
-                    "winner": null,
-                    "score": {
-                        "regular": {
-                            "teamA": null,
-                            "teamB": null
-                        },
-                        "penalties": {
-                            "teamA": null,
-                            "teamB": null
-                        }
-                    }
-                },
-                {
-                    "id": 3,
-                    "order": 3,
-                    "teamA": null,
-                    "teamB": null,
-                    "winner": null,
-                    "score": {
-                        "regular": {
-                            "teamA": null,
-                            "teamB": null
-                        },
-                        "penalties": {
-                            "teamA": null,
-                            "teamB": null
-                        }
-                    }
-                },
-                {
-                    "id": 4,
-                    "order": 4,
-                    "teamA": null,
-                    "teamB": null,
-                    "winner": null,
-                    "score": {
-                        "regular": {
-                            "teamA": null,
-                            "teamB": null
-                        },
-                        "penalties": {
-                            "teamA": null,
-                            "teamB": null
-                        }
-                    }
-                },
-                {
-                    "id": 5,
-                    "order": 5,
-                    "teamA": null,
-                    "teamB": null,
-                    "winner": null,
-                    "score": {
-                        "regular": {
-                            "teamA": null,
-                            "teamB": null
-                        },
-                        "penalties": {
-                            "teamA": null,
-                            "teamB": null
-                        }
-                    }
-                },
-                {
-                    "id": 6,
-                    "order": 6,
-                    "teamA": null,
-                    "teamB": null,
-                    "winner": null,
-                    "score": {
-                        "regular": {
-                            "teamA": null,
-                            "teamB": null
-                        },
-                        "penalties": {
-                            "teamA": null,
-                            "teamB": null
-                        }
-                    }
-                },
-                {
-                  "id": 7,
-                  "order": 7,
-                  "teamA": null,
-                  "teamB": null,
-                  "winner": null,
-                  "score": {
-                      "regular": {
-                          "teamA": null,
-                          "teamB": null
-                      },
-                      "penalties": {
-                          "teamA": null,
-                          "teamB": null
-                      }
-                  }
-              }
-            ]
-        }
-    ], 
-    "participating": {
-        "tournament_1": {
-            "id": 1,
-            "teams": [
-                {
-                    "id": 4,
-                    "participating": false
-                },
-                {
-                    "id": 5,
-                    "participating": false
-                }
-            ]
-        },
-        "tournament_2": {
-            "id": 1,
-            "teams": [
-                {
-                    "id": 4,
-                    "participating": true
-                },
-                {
-                    "id": 5,
-                    "participating": true
-                }
-            ]
-        }
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$YQiiz0ANVwIgpOjYXPxc0O9H2XeX3m8OoY1xk7OGgxTnOJnsZU7FO",
+      "name": "admin",
+      "contact": "00000000",
+      "myTeam": null,
+      "id": 1
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$JcuPOvTtXI2OwKTFB/0Ve.DCkJO6ICcxxOtFQLY3YmuwOqLgcF6rO",
+      "name": "admin",
+      "contact": "00000000",
+      "myTeam": null,
+      "id": 2
+    },
+    {
+      "email": "testuser@mail.com",
+      "password": "$2a$10$xpFV4EMB8NajnIoHfyLbQuj8aF/B4VYCncXvaIxIKW8UAXzYx3p66",
+      "name": "Test User",
+      "contact": "5199999999",
+      "myTeam": null,
+      "id": 3
+    },
+    {
+      "email": "testuser2@mail.com",
+      "password": "$2a$10$SCF3Sq7ykhPkepGGIrM.CeXKcTgKLuENCmT30DQjZzm7XEK.pCy6a",
+      "name": "Test User",
+      "contact": "5199999999",
+      "myTeam": null,
+      "id": 4
     }
+  ],
+  "teams": [
+    {
+      "userId": 4,
+      "name": "Kenzie FC",
+      "logo": "TEST",
+      "players": [],
+      "id": 1
+    }
+  ],
+  "tournaments": [
+    {
+      "id": 1,
+      "ownerId": 1,
+      "name": "Copa do Brasil",
+      "type": "Qualify",
+      "numberOfTeams": 6,
+      "inProgress": true,
+      "champion": null,
+      "matches": [
+        {
+          "id": 1,
+          "order": 1,
+          "teamA": 4,
+          "teamB": 5,
+          "winner": 4,
+          "score": {
+            "regular": {
+              "teamA": 3,
+              "teamB": 3
+            },
+            "penalties": {
+              "teamA": 5,
+              "teamB": 4
+            }
+          }
+        },
+        {
+          "id": 2,
+          "order": 2,
+          "teamA": null,
+          "teamB": null,
+          "winner": null,
+          "score": {
+            "regular": {
+              "teamA": null,
+              "teamB": null
+            },
+            "penalties": {
+              "teamA": null,
+              "teamB": null
+            }
+          }
+        },
+        {
+          "id": 3,
+          "order": 3,
+          "teamA": null,
+          "teamB": null,
+          "winner": null,
+          "score": {
+            "regular": {
+              "teamA": null,
+              "teamB": null
+            },
+            "penalties": {
+              "teamA": null,
+              "teamB": null
+            }
+          }
+        },
+        {
+          "id": 4,
+          "order": 4,
+          "teamA": null,
+          "teamB": null,
+          "winner": null,
+          "score": {
+            "regular": {
+              "teamA": null,
+              "teamB": null
+            },
+            "penalties": {
+              "teamA": null,
+              "teamB": null
+            }
+          }
+        },
+        {
+          "id": 5,
+          "order": 5,
+          "teamA": null,
+          "teamB": null,
+          "winner": null,
+          "score": {
+            "regular": {
+              "teamA": null,
+              "teamB": null
+            },
+            "penalties": {
+              "teamA": null,
+              "teamB": null
+            }
+          }
+        },
+        {
+          "id": 6,
+          "order": 6,
+          "teamA": null,
+          "teamB": null,
+          "winner": null,
+          "score": {
+            "regular": {
+              "teamA": null,
+              "teamB": null
+            },
+            "penalties": {
+              "teamA": null,
+              "teamB": null
+            }
+          }
+        },
+        {
+          "id": 7,
+          "order": 7,
+          "teamA": null,
+          "teamB": null,
+          "winner": null,
+          "score": {
+            "regular": {
+              "teamA": null,
+              "teamB": null
+            },
+            "penalties": {
+              "teamA": null,
+              "teamB": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "participating": {
+    "tournament_1": {
+      "id": 1,
+      "teams": [
+        {
+          "id": 4,
+          "participating": false
+        },
+        {
+          "id": 5,
+          "participating": false
+        }
+      ]
+    },
+    "tournament_2": {
+      "id": 1,
+      "teams": [
+        {
+          "id": 4,
+          "participating": true
+        },
+        {
+          "id": 5,
+          "participating": true
+        }
+      ]
+    }
+  }
 }
