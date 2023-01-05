@@ -12,7 +12,7 @@ const rules = auth.rewriter({
   users: 600,
   teams: 644,
   tournaments: 644,
-  participating: 664,
+  subscriptions: 664,
   matches: 644,
   players: 644,
 });

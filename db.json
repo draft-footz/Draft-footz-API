@@ -13,8 +13,9 @@
       "password": "$2a$10$hNWFIn/NDxV8KTm62CkE/uQ3FHiNVy.kvYFybgQKW07Gp1VxhxRJq",
       "name": "Test User",
       "contact": "127.0.0.1",
-      "myTeam": null,
-      "id": 2
+      "myTeam": 2,
+      "id": 2,
+      "batata": null
     }
   ],
   "teams": [
@@ -40,27 +41,22 @@
       "inProgress": true,
       "champion": null,
       "id": 1
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": 1,
+      "tournament": 1,
+      "teamId": 1,
+      "accepted": false
     },
     {
-      "userId": 2,
-      "name": "Kenzie Cup",
-      "type": "Qualifiers",
-      "numberOfTeams": 8,
-      "champion": null,
+      "tournament": 1,
+      "teamId": 2,
+      "accepted": true,
       "id": 2
     }
   ],
-  "participating": {
-    "tournament_1": {
-      "id": 1,
-      "teams": [
-        {
-          "id": 1,
-          "participating": false
-        }
-      ]
-    }
-  },
   "matches": [
     {
       "tournament": 1,
@@ -218,6 +214,16 @@
       "contact": "519999999",
       "position": null,
       "id": 3
+    },
+    {
+      "userId": 2,
+      "teamId": 2,
+      "name": "Fagundes",
+      "age": 35,
+      "avatar": "url",
+      "contact": "519999999",
+      "position": null,
+      "id": 4
     }
   ]
 }
