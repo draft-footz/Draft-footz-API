@@ -13,6 +13,8 @@ const rules = auth.rewriter({
   teams: 644,
   tournaments: 644,
   participating: 664,
+  matches: 644,
+  players: 644,
 });
 
 app.use(cors());
