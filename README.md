@@ -2,38 +2,49 @@ Draft Footz - API
 Este é o backend da aplicação Draft Footz - Uma aplicação para organizar e gerenciar torneios e times de futebol! O objetivo dessa aplicação é conseguir criar um frontend de qualidade em grupo, utilizando o que foi ensinado no terceiro módulo (M3), bem como o desenvolvimento de hard e soft skills.
 
 Endpoints
+
 A API tem um total de 6 endpoints.
 
 Pode-se usar a url abaixo para utilizar a API ou se quiser, pode fazer o clone do repositório e rodá-la localmente.
-ATENÇÃO: Só lembrando que a url precisa ser alterada em seu projeto se alternar entre os modos acima.
+ATENÇÃO: Lembrar que a url precisa ser alterada em seu projeto se alternar entre os modos acima.
 
 https://draft-footz.onrender.com/
 
 ROTAS QUE NÃO PRECISAM DE AUTORIZAÇÃO.
 
-Criar usuário
---------------------- POST /register - FORMATO DA REQUISIÇÃO
+--------------------- Criar usuário
+POST /register - FORMATO DA REQUISIÇÃO
 
 Para requisição de cadastro, envie uma requisição /POST para a rota url/users.
 
 Envie no corpo da requisição:
 
 email: "email do usuário",
+
 password: "senha do usuário",
+
 name: "nome do usuário",
+
 username: "apelido do usuário",
+
 contact: "contato do usuário",
 
-Caso dê tudo certo, a resposta será assim:
---------------------- POST /register - FORMATO DA RESPOSTA - STATUS 201
+Caso dê tudo certo, a resposta será assim: POST /register - FORMATO DA RESPOSTA - STATUS 201
 
 {
+
 "email": "admim@mail.com",
+
 "password": "$2a$10$YQiiz0ANVwIgpOjYXPxc0O9H2XeX3m8OoY1xk7OGgxTnOJnsZU7FO",
+
 "name": "Admin",
+
 "number": 988584074,
+
 "id": 1
+
 "myTeam": null
+
 }
 
 \***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***A senha necessita de 8 caracteres. \***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***--------------------- POST /register - FORMATO DA RESPOSTA - STATUS 400
