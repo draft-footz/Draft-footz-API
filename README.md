@@ -13,7 +13,8 @@ https://draft-footz.onrender.com/
 ROTAS QUE NÃO PRECISAM DE AUTORIZAÇÃO.
 
 --------------------- Criar usuário
-POST /register - FORMATO DA REQUISIÇÃO
+
+--------------------- POST /register - FORMATO DA REQUISIÇÃO
 
 Para requisição de cadastro, envie uma requisição /POST para a rota url/users.
 
@@ -29,7 +30,9 @@ username: "apelido do usuário",
 
 contact: "contato do usuário",
 
-Caso dê tudo certo, a resposta será assim: POST /register - FORMATO DA RESPOSTA - STATUS 201
+Caso dê tudo certo, a resposta será assim:
+
+STATUS 201
 
 {
 
@@ -51,25 +54,36 @@ Caso dê tudo certo, a resposta será assim: POST /register - FORMATO DA RESPOST
 
 \***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***{ \***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***"status": "error", \***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***"message": ["password: minimum is 8 characters"] \***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***}
 
-Login
+--------------------- Login
+
 --------------------- POST /login - FORMATO DA REQUISIÇÃO
 
 Para requisição de login, envie uma requisição de /POST para a rota url/login. Envie no corpo da requisição:
 
 email: "email do usuário",
+
 password: "senha do usuário"
 
 Caso dê tudo certo, a resposta será assim:
---------------------- POST /login - FORMATO DA RESPOSTA - STATUS 201
+
+STATUS 201
 
 {
+
 "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF1Z3VzdG9AdGVzdC5jb20iLCJpYXQiOjE2NzMwNDEyNjEsImV4cCI6MTY3MzA0NDg2MSwic3ViIjoiMyJ9.i-g61mmYZQA_qDA9Mp67lk5m78YP5AAviNvgUoNJ6Mo",
+
 "user": {
+
 "email": "augusto@test.com",
+
 "name": "Test User",
+
 "contact": "127.0.0.1",
+
 "myTeam": null,
+
 "id": 3
+
 }
 
 Listar todos os times
