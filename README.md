@@ -11,11 +11,12 @@ Este é o backend da aplicação Draft Footz - Uma aplicação para organizar e 
 A API tem um total de 6 endpoints.
 
 Pode-se usar a url abaixo para utilizar a API ou se quiser, pode fazer o clone do repositório e rodá-la localmente.
+
 ATENÇÃO: Lembrar que a url precisa ser alterada em seu projeto se alternar entre os modos acima.
 
 https://draft-footz.onrender.com/
 
-## Rotas que não precisam de autenticação
+## ROTAS QUE NÃO PRECISAM DE AUTENTICAÇÃO
 
 <h2 align ='center'> Criar usuário </h2>
 
@@ -77,7 +78,7 @@ Caso dê tudo certo, a resposta será assim:
 {
   "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF1Z3VzdG9AdGVzdC5jb20iLCJpYXQiOjE2NzMwNDEyNjEsImV4cCI6MTY3MzA0NDg2MSwic3ViIjoiMyJ9.i-g61mmYZQA_qDA9Mp67lk5m78YP5AAviNvgUoNJ6Mo",
   "user": {
-    "email": "augusto@test.com",
+    "email": "user@test.com",
     "name": "Test User",
     "contact": "127.0.0.1",
     "myTeam": null,
@@ -228,14 +229,159 @@ Caso bem sucedido o retorno da requisição será um array com todas os pedidos 
 }
 ```
 
-ROTAS QUE PRECISAM DE AUTORIZAÇÃO.
+## ROTAS QUE PRECISAM DE AUTENTICAÇÃO
 
-Authorization: Bearer {token}
+Rotas que necessitam de autorização deve ser informado no cabeçalho da requisição o campo "Authorization", dessa forma:
+
+> Authorization: Bearer {token}
+
+<h2 align ='center'> Atualizar o time nos dados do usuário </h2>
+
+`PATCH /users/:id`
+
+Para definir qual é o ID do time do usuário, envie uma requisição de /PATCH para a rota url/users/idDoUsuário.
+
+Envie no corpo da requisição:
+
+```json
+{
+  "teamId": 1
+}
+```
+
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 200`
+
+```json
+{
+  "email": "user@test.com",
+  "password": "$2a$10$hNWFIn/NDxV8KTm62CkE/uQ3FHiNVy.kvYFybgQKW07Gp1VxhxRJq",
+  "name": "Test User",
+  "contact": "127.0.0.1",
+  "myTeam": 1,
+  "id": 3
+}
+```
+
+<h2 align ='center'> Buscar dados do usuário </h2>
+
+`GET /users/:id`
+
+Para buscar os dados do usuário, envie uma requisição de /GET para a rota url/users/:id
+
+Envie no corpo da requisição:
+
+```json
+{
+  "userId": 1
+}
+```
+
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 200`
+
+```json
+{
+  "email": "user@test.com",
+  "password": "$2a$10$hNWFIn/NDxV8KTm62CkE/uQ3FHiNVy.kvYFybgQKW07Gp1VxhxRJq",
+  "name": "Test User",
+  "contact": "127.0.0.1",
+  "myTeam": 1,
+  "id": 2
+}
+```
+
+<h2 align ='center'> Criar novo time </h2>
+
+`POST /teams`
+
+Para criar um novo time, envie uma requisição /POST na rota url/teams.
+
+Envie no corpo da requisição:
+
+```json
+{
+  "userId": "id do usuário",
+  "name": "nome do time",
+  "logo": "url do símbolo do time"
+}
+```
+
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 201`
+
+```json
+{
+  "userId": 1,
+  "name": "FC KENZIE",
+  "logo": "https://imgs.search.brave.com/B9RMHDqmhcs6PqdPKbzkPdzqdx1eZzjjBwq4cuX01SU/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5O/QnNGVk1pdzR6Nk9x/Y3VJQm14UWJRSGFI/YSZwaWQ9QXBp",
+  "id": 2
+}
+```
+
+<h2 align ='center'> Atualizar time </h2>
+
+`POST /teams/:id`
+
+Para atualizar os dados de um time, envie uma requisição /PATCH para a rota url/teams/:id onde o "id" é o id do time.
+
+Envie no corpo da requisição:
+
+```json
+{
+  "userId": "id do usuário"
+  // E outros campos que serão alterados
+}
+```
+
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 200`
+
+```json
+{
+  "userId": 1,
+  "name": "Kenzie Brasil FC",
+  "logo": "https://imgs.search.brave.com/B9RMHDqmhcs6PqdPKbzkPdzqdx1eZzjjBwq4cuX01SU/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5O/QnNGVk1pdzR6Nk9x/Y3VJQm14UWJRSGFI/YSZwaWQ9QXBp",
+  "id": 1
+}
+```
+
+<h2 align ='center'> Deletar time </h2>
+
+`DELETE /teams/:id`
+
+Para deletar o time, envie uma requisição /DELETE para a rota url/teams/:id onde o "id" é o id do time.
+
+Envie no corpo da requisição:
+
+```json
+{
+  "userId": "id do usuário"
+}
+```
+
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 200`
+
+```json
+{}
+```
+
+ATENÇÃO: Logo em seguida, envie uma requisição `Update User's Team`, com o corpo:
+
+```json
+{
+  "myTeam": null
+}
+```
 
 Buscar Perfil do usuário logado (token)
 GET /profile - FORMATO DA REQUISIÇÃO
-
-Na requisição apenas é necessário o TOKEN, a aplicação ficará responsável em buscar o id do usuário no token e retorna ele.
 
 GET /profile - FORMATO DA RESPOSTA - STATUS 200
 

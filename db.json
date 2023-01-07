@@ -14,8 +14,7 @@
       "name": "Test User",
       "contact": "127.0.0.1",
       "myTeam": 2,
-      "id": 2,
-      "batata": null
+      "id": 2
     }
   ],
   "teams": [
