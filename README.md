@@ -54,215 +54,179 @@ Caso dê tudo certo, a resposta será assim:
 
 \***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***{ \***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***"status": "error", \***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***"message": ["password: minimum is 8 characters"] \***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***}
 
---------------------- Login
+<h2 align ='center'> Login </h2>
 
---------------------- POST /login - FORMATO DA REQUISIÇÃO
+`POST /login - FORMATO DA REQUISIÇÃO`
 
-Para requisição de login, envie uma requisição de /POST para a rota url/login. Envie no corpo da requisição:
+Para requisição de login, envie uma requisição de /POST para a rota url/login.
 
-email: "email do usuário",
+Envie no corpo da requisição:
 
-password: "senha do usuário"
+```json
+{
+  "email": "email do usuário",
+  "password": "senha do usuário"
+}
+```
 
 Caso dê tudo certo, a resposta será assim:
 
-STATUS 201
+`STATUS 201`
 
+```json
 {
-
-"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF1Z3VzdG9AdGVzdC5jb20iLCJpYXQiOjE2NzMwNDEyNjEsImV4cCI6MTY3MzA0NDg2MSwic3ViIjoiMyJ9.i-g61mmYZQA_qDA9Mp67lk5m78YP5AAviNvgUoNJ6Mo",
-
-"user": {
-
-"email": "augusto@test.com",
-
-"name": "Test User",
-
-"contact": "127.0.0.1",
-
-"myTeam": null,
-
-"id": 3
-
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF1Z3VzdG9AdGVzdC5jb20iLCJpYXQiOjE2NzMwNDEyNjEsImV4cCI6MTY3MzA0NDg2MSwic3ViIjoiMyJ9.i-g61mmYZQA_qDA9Mp67lk5m78YP5AAviNvgUoNJ6Mo",
+  "user": {
+    "email": "augusto@test.com",
+    "name": "Test User",
+    "contact": "127.0.0.1",
+    "myTeam": null,
+    "id": 3
+  }
 }
+```
 
-}
+<h2 align ='center'> Listar todos os times </h2>
 
-Listar todos os times
-
---------------------- GET /teams - FORMATO DA RESPOSTA - STATUS 200
+`GET /teams - FORMATO DA RESPOSTA - STATUS 200`
 
 Para obter todos os times, envie uma requisição /GET para a rota url/teams.
 
 Caso bem sucedido o retorno da requisição será um array com todos os times.
 
-Listar time
+<h2 align ='center'> Listar time </h2>
 
---------------------- GET /teams/:id
+`GET /teams/:id`
 
 Para ler as informações do time do usuário, envie uma requisição /GET para a rota url/teams/:id, onde o ":id" é o id do time do usuário, encontrado no campo myTeam da resposta da requisição de Login.
 
 Caso dê tudo certo, a resposta será assim:
 
-STATUS 200
+`STATUS 200`
 
+```json
 {
-
-"userId": 2,
-
-"name": "Kenzie FC",
-
-"logo": "https://imgs.search.brave.com/B9RMHDqmhcs6PqdPKbzkPdzqdx1eZzjjBwq4cuX01SU/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5O/QnNGVk1pdzR6Nk9x/Y3VJQm14UWJRSGFI/YSZwaWQ9QXBp",
-
-"id": 2
-
+  "userId": 2,
+  "name": "Kenzie FC",
+  "logo": "https://imgs.search.brave.com/B9RMHDqmhcs6PqdPKbzkPdzqdx1eZzjjBwq4cuX01SU/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5O/QnNGVk1pdzR6Nk9x/Y3VJQm14UWJRSGFI/YSZwaWQ9QXBp",
+  "id": 2
 }
+```
 
 ATENÇÃO: o usuário só terá acesso ao time que ele é dono.
 
-Listar jogadores do time
+<h2 align ='center'> Listar jogadores do time </h2>
 
---------------------- GET /players?&teamId=:id
+`GET /players?&teamId=:id`
 
 Para obter os jogadores do time, envie uma requisição /GET para a rota url/players?&teamId=:id, onde o ":id" é o id do time.
 
 Caso dê tudo certo, a resposta será assim:
 
-STATUS 200
+`STATUS 200`
 
+```json
 {
-
-"userId": 2,
-
-"teamId": 2,
-
-"name": "Luisito Suarez",
-
-"age": 35,
-
-"avatar": "url",
-
-"contact": "519999999",
-
-"position": null,
-
-"id": 2
-
+  "userId": 2,
+  "teamId": 2,
+  "name": "Luisito Suarez",
+  "age": 35,
+  "avatar": "url",
+  "contact": "519999999",
+  "position": null,
+  "id": 2
 }
+```
 
-Listar todos os torneios
+<h2 align ='center'> Listar todos os torneios </h2>
 
---------------------- GET /tournaments - FORMATO DA RESPOSTA - STATUS 200
+`GET /tournaments - FORMATO DA RESPOSTA - STATUS 200`
 
 PPara obter todos os torneios, envie uma requisição /GET para a rota url/tournaments.
 
 Caso bem sucedido o retorno da requisição será um array com todos os torneios.
 
-Listar torneio
+<h2 align ='center'> Listar torneio </h2>
 
---------------------- GET /tournaments?&userId=:id
+`GET /tournaments?&userId=:id`
 
 Para obter os torneios de um usuário, envie uma requisição /GET para a rota url/tournaments?&userId=:id, onde o ":id" é o id do usuário.
 
 Caso dê tudo certo, a resposta será assim:
 
-STATUS 200
+`STATUS 200`
 
+```json
 {
-
-"userId": 1,
-
-"name": "Copa Kenzie",
-
-"type": "Qualifiers",
-
-"numberOfTeams": 8,
-
-"inProgress": true,
-
-"champion": null,
-
-"id": 1
-
+  "userId": 1,
+  "name": "Copa Kenzie",
+  "type": "Qualifiers",
+  "numberOfTeams": 8,
+  "inProgress": true,
+  "champion": null,
+  "id": 1
 }
+```
 
 ATENÇÃO: o usuário só terá acesso ao torneio que ele é dono.
 
-Listar partidas de um torneio
+<h2 align ='center'> Listar partidas de um torneio </h2>
 
---------------------- GET /matches?&tournament=:id - FORMATO DA RESPOSTA - STATUS 200
+`GET /matches?&tournament=:id - FORMATO DA RESPOSTA - STATUS 200`
 
 Para obter as partidas de um torneio, envie uma requisição /GET para a rota url/matches?&tournament=:id, onde o ":id" é o id do torneio.
 
 Caso bem sucedido o retorno da requisição será um array com todas as partidas do torneio.
 
-Listar partida
+<h2 align ='center'> Listar partida </h2>
 
---------------------- GET /matches/:id
+`GET /matches/:id`
 
 Para ler uma partida especifica, envie uma requisição /GET para a rota url/matches/:id, onde o ":id" é o id da partida.
 
 Caso dê tudo certo, a resposta será assim:
 
-STATUS 200
+`STATUS 200`
 
+```json
 {
-
-"tournament": 1,
-
-"id": 1,
-
-"order": 1,
-
-"teamA": null,
-
-"teamB": null,
-
-"winner": null,
-
-"score": {
-
-"regular": {
-
-"teamA": null,
-
-"teamB": null
-
-},
-
-"penalties": {
-
-"teamA": null,
-
-"teamB": null
-
+  "tournament": 1,
+  "id": 1,
+  "order": 1,
+  "teamA": null,
+  "teamB": null,
+  "winner": null,
+  "score": {
+    "regular": {
+      "teamA": null,
+      "teamB": null
+    },
+    "penalties": {
+      "teamA": null,
+      "teamB": null
+    }
+  }
 }
+```
 
-}
+<h2 align ='center'> Listar pedidos de inscrição em torneios </h2>
 
-}
-
-Listar pedidos de inscrição em torneios
-
---------------------- GET /subscriptions??&tournamentId=:id
+`GET /subscriptions??&tournamentId=:id`
 
 Para ler os pedidos de inscrição para um torneio, envie uma requisição /GET para a rota url/subscriptions??&tournamentId=:id, onde o ":id" é o id do torneio.
 
 Caso bem sucedido o retorno da requisição será um array com todas os pedidos de inscrição no torneio no seguinte formato:
 
-STATUS 200
+`STATUS 200`
 
+```json
 {
-
-"id": 1,
-
-"tournament": 1,
-
-"teamId": 1,
-
-"accepted": false
-
+  "id": 1,
+  "tournament": 1,
+  "teamId": 1,
+  "accepted": false
 }
+```
 
 ROTAS QUE PRECISAM DE AUTORIZAÇÃO.
 
@@ -361,3 +325,14 @@ PUT /profile - FORMATO DA REQUISIÇÃO
 "password": "123456789"
 }
 Feito com ♥ by araujooj 👋
+
+````
+
+```
+
+```
+
+```
+
+```
+````
