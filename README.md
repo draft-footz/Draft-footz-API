@@ -1,7 +1,12 @@
-Draft Footz - API
-Este é o backend da aplicação Draft Footz - Uma aplicação para organizar e gerenciar torneios e times de futebol! O objetivo dessa aplicação é conseguir criar um frontend de qualidade em grupo, utilizando o que foi ensinado no terceiro módulo (M3), bem como o desenvolvimento de hard e soft skills.
+<h1 align="center">
+  Draft Footz - API
+</h1>
 
-Endpoints
+<p align = "center">
+Este é o backend da aplicação Draft Footz - Uma aplicação para organizar e gerenciar torneios e times de futebol! O objetivo dessa aplicação é conseguir criar um frontend de qualidade em grupo, utilizando o que foi ensinado no terceiro módulo (M3), bem como o desenvolvimento de hard e soft skills.
+</p>
+
+## **Endpoints**
 
 A API tem um total de 6 endpoints.
 
@@ -10,30 +15,35 @@ ATENÇÃO: Lembrar que a url precisa ser alterada em seu projeto se alternar ent
 
 https://draft-footz.onrender.com/
 
-ROTAS QUE NÃO PRECISAM DE AUTORIZAÇÃO.
+## Rotas que não precisam de autenticação
 
---------------------- Criar usuário
+<h2 align ='center'> Criar usuário </h2>
 
---------------------- POST /register - FORMATO DA REQUISIÇÃO
+`POST /register - FORMATO DA REQUISIÇÃO`
 
 Para requisição de cadastro, envie uma requisição /POST para a rota url/users.
 
 Envie no corpo da requisição:
 
-email: "email do usuário",
+```json
+{
+  "email": "email do usuário",
 
-password: "senha do usuário",
+  "password": "senha do usuário",
 
-name: "nome do usuário",
+  "name": "nome do usuário",
 
-username: "apelido do usuário",
+  "username": "apelido do usuário",
 
-contact: "contato do usuário",
+  "contact": "contato do usuário"
+}
+```
 
 Caso dê tudo certo, a resposta será assim:
 
-STATUS 201
+`STATUS 201`
 
+```json
 {
 
 "email": "admim@mail.com",
@@ -49,6 +59,7 @@ STATUS 201
 "myTeam": null
 
 }
+```
 
 \***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***A senha necessita de 8 caracteres. \***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***--------------------- POST /register - FORMATO DA RESPOSTA - STATUS 400
 
@@ -86,7 +97,10 @@ STATUS 201
 
 }
 
+}
+
 Listar todos os times
+
 --------------------- GET /teams - FORMATO DA RESPOSTA - STATUS 200
 
 Para obter todos os times, envie uma requisição /GET para a rota url/teams.
@@ -94,38 +108,61 @@ Para obter todos os times, envie uma requisição /GET para a rota url/teams.
 Caso bem sucedido o retorno da requisição será um array com todos os times.
 
 Listar time
---------------------- GET /teams/:id - FORMATO DA RESPOSTA - STATUS 200
+
+--------------------- GET /teams/:id
 
 Para ler as informações do time do usuário, envie uma requisição /GET para a rota url/teams/:id, onde o ":id" é o id do time do usuário, encontrado no campo myTeam da resposta da requisição de Login.
 
 Caso dê tudo certo, a resposta será assim:
+
+STATUS 200
+
 {
+
 "userId": 2,
+
 "name": "Kenzie FC",
+
 "logo": "https://imgs.search.brave.com/B9RMHDqmhcs6PqdPKbzkPdzqdx1eZzjjBwq4cuX01SU/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5O/QnNGVk1pdzR6Nk9x/Y3VJQm14UWJRSGFI/YSZwaWQ9QXBp",
+
 "id": 2
+
 }
 
 ATENÇÃO: o usuário só terá acesso ao time que ele é dono.
 
 Listar jogadores do time
---------------------- GET /players?&teamId=:id - FORMATO DA RESPOSTA - STATUS 200
+
+--------------------- GET /players?&teamId=:id
 
 Para obter os jogadores do time, envie uma requisição /GET para a rota url/players?&teamId=:id, onde o ":id" é o id do time.
 
 Caso dê tudo certo, a resposta será assim:
+
+STATUS 200
+
 {
+
 "userId": 2,
+
 "teamId": 2,
+
 "name": "Luisito Suarez",
+
 "age": 35,
+
 "avatar": "url",
+
 "contact": "519999999",
+
 "position": null,
+
 "id": 2
+
 }
 
 Listar todos os torneios
+
 --------------------- GET /tournaments - FORMATO DA RESPOSTA - STATUS 200
 
 PPara obter todos os torneios, envie uma requisição /GET para a rota url/tournaments.
@@ -133,24 +170,37 @@ PPara obter todos os torneios, envie uma requisição /GET para a rota url/tourn
 Caso bem sucedido o retorno da requisição será um array com todos os torneios.
 
 Listar torneio
---------------------- GET /tournaments?&userId=:id - FORMATO DA RESPOSTA - STATUS 200
+
+--------------------- GET /tournaments?&userId=:id
 
 Para obter os torneios de um usuário, envie uma requisição /GET para a rota url/tournaments?&userId=:id, onde o ":id" é o id do usuário.
 
 Caso dê tudo certo, a resposta será assim:
+
+STATUS 200
+
 {
+
 "userId": 1,
+
 "name": "Copa Kenzie",
+
 "type": "Qualifiers",
+
 "numberOfTeams": 8,
+
 "inProgress": true,
+
 "champion": null,
+
 "id": 1
+
 }
 
 ATENÇÃO: o usuário só terá acesso ao torneio que ele é dono.
 
 Listar partidas de um torneio
+
 --------------------- GET /matches?&tournament=:id - FORMATO DA RESPOSTA - STATUS 200
 
 Para obter as partidas de um torneio, envie uma requisição /GET para a rota url/matches?&tournament=:id, onde o ":id" é o id do torneio.
@@ -158,42 +208,71 @@ Para obter as partidas de um torneio, envie uma requisição /GET para a rota ur
 Caso bem sucedido o retorno da requisição será um array com todas as partidas do torneio.
 
 Listar partida
---------------------- GET /matches/:id - FORMATO DA RESPOSTA - STATUS 200
+
+--------------------- GET /matches/:id
 
 Para ler uma partida especifica, envie uma requisição /GET para a rota url/matches/:id, onde o ":id" é o id da partida.
 
 Caso dê tudo certo, a resposta será assim:
+
+STATUS 200
+
 {
+
 "tournament": 1,
+
 "id": 1,
+
 "order": 1,
+
 "teamA": null,
+
 "teamB": null,
+
 "winner": null,
+
 "score": {
+
 "regular": {
+
 "teamA": null,
+
 "teamB": null
+
 },
+
 "penalties": {
+
 "teamA": null,
+
 "teamB": null
+
 }
+
 }
+
 }
 
 Listar pedidos de inscrição em torneios
---------------------- GET /subscriptions??&tournamentId=:id - FORMATO DA RESPOSTA - STATUS 200
+
+--------------------- GET /subscriptions??&tournamentId=:id
 
 Para ler os pedidos de inscrição para um torneio, envie uma requisição /GET para a rota url/subscriptions??&tournamentId=:id, onde o ":id" é o id do torneio.
 
 Caso bem sucedido o retorno da requisição será um array com todas os pedidos de inscrição no torneio no seguinte formato:
 
+STATUS 200
+
 {
+
 "id": 1,
+
 "tournament": 1,
+
 "teamId": 1,
+
 "accepted": false
+
 }
 
 ROTAS QUE PRECISAM DE AUTORIZAÇÃO.
