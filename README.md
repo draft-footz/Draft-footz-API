@@ -28,13 +28,9 @@ Envie no corpo da requisição:
 ```json
 {
   "email": "email do usuário",
-
   "password": "senha do usuário",
-
   "name": "nome do usuário",
-
   "username": "apelido do usuário",
-
   "contact": "contato do usuário"
 }
 ```
@@ -45,19 +41,12 @@ Caso dê tudo certo, a resposta será assim:
 
 ```json
 {
-
-"email": "admim@mail.com",
-
-"password": "$2a$10$YQiiz0ANVwIgpOjYXPxc0O9H2XeX3m8OoY1xk7OGgxTnOJnsZU7FO",
-
-"name": "Admin",
-
-"number": 988584074,
-
-"id": 1
-
-"myTeam": null
-
+  "email": "admim@mail.com",
+  "password": "$2a$10$YQiiz0ANVwIgpOjYXPxc0O9H2XeX3m8OoY1xk7OGgxTnOJnsZU7FO",
+  "name": "Admin",
+  "number": 988584074,
+  "id": 1,
+  "myTeam": null
 }
 ```
 
