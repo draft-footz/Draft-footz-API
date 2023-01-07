@@ -393,10 +393,8 @@ Envie no corpo da requisição:
   "userId": "id do usuário",
   "teamId": "id do time",
   "name": "nome do jogador",
-  "age": "idade do jogador",
-  "avatar": "url do avatar do jogador",
-  "contact": "contato do jogador",
-  "position": null
+  "position": null,
+  "number": "número da camisa do jogador"
 }
 ```
 
@@ -409,10 +407,8 @@ Caso dê tudo certo, a resposta será assim:
   "userId": 1,
   "teamId": 1,
   "name": "Ronaldo",
-  "age": 35,
-  "avatar": "url",
-  "contact": "519999999",
   "position": null,
+  "number": 10,
   "id": 2
 }
 ```
@@ -441,10 +437,8 @@ Caso dê tudo certo, a resposta será assim:
   "userId": 1,
   "teamId": 1,
   "name": "Rivaldo",
-  "age": 35,
-  "avatar": "url",
-  "contact": "21987654321",
   "position": "Atacante",
+  "number": 10,
   "id": 2
 }
 ```
