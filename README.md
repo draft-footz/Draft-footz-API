@@ -350,7 +350,7 @@ Caso dê tudo certo, a resposta será assim:
 }
 ```
 
-<h2 align ='center'> Deletar time </h2>
+<h2 align ='center'> Excluir time </h2>
 
 `DELETE /teams/:id`
 
@@ -380,105 +380,352 @@ ATENÇÃO: Logo em seguida, envie uma requisição `Update User's Team`, com o c
 }
 ```
 
-Buscar Perfil do usuário logado (token)
-GET /profile - FORMATO DA REQUISIÇÃO
+<h2 align ='center'> Criar novo jogador </h2>
 
-GET /profile - FORMATO DA RESPOSTA - STATUS 200
+`POST /players`
 
+Para inserir um jogador em um time, envie uma requisição /POST para a rota url/players.
+
+Envie no corpo da requisição:
+
+```json
 {
-"id": "1f4b83fe-c3df-4818-8356-c8d4dedeb49b",
-"name": "Teste",
-"email": "teste@gmail.com",
-"course_module": "m3",
-"bio": "Teste",
-"contact": "linkedin/in/teste",
-"techs": [],
-"works": [],
-"created_at": "2022-08-08T00:08:22.920Z",
-"updated_at": "2022-08-08T00:08:22.920Z",
-"avatar_url": null
+  "userId": "id do usuário",
+  "teamId": "id do time",
+  "name": "nome do jogador",
+  "age": "idade do jogador",
+  "avatar": "url do avatar do jogador",
+  "contact": "contato do jogador",
+  "position": null
 }
-Criar tecnologias para o seu perfil
-POST /users/techs - FORMATO DA REQUISIÇÃO
-
-{
-"title": "React",
-"status": "Iniciante"
-}
-O campo - "status" deve receber respectivamente os 3 níveis de habilidade:
-"Iniciante"
-"Intermediário"
-"Avançado"
-Caso você tente criar uma tecnologia com o mesmo nome para o seu perfil, receberá este erro:
-
-POST /users/techs - FORMATO DA RESPOSTA - STATUS 401
-
-{
-"status": "error",
-"message": "User Already have this technology created, you can only update it"
-}
-Ou seja, você pode apenas dar update em quanto você avançou nas tecnologias que já está no seu perfil. Utilizando este endpoint:
-
-PUT /users/techs/:tech_id - FORMATO DA REQUISIÇÃO
-
-{
-"status": "Avançado"
-}
-Também é possível deletar uma tecnologia, utilizando este endpoint:
-
-DELETE /users/techs/:tech_id
-
-Não é necessário um corpo da requisição.
-Criar trabalhos para o seu perfil
-Da mesma forma de criar tecnologias, conseguimos criar trabalhos, dessa forma:
-
-POST /users/works - FORMATO DA REQUISIÇÃO
-
-{
-"title": "KenzieHub",
-"description": "I was the backend developer of this project, and i did it using Typescript and NodeJS",
-"deploy_url": "https://kenziehub.me"
-}
-Conseguimos atualizar o titulo, a descrição ou o deploy_url, qualquer uma das informações do respectivo trabalho. Utilizando este endpoint:
-
-PUT /users/works/:work_id - FORMATO DA REQUISIÇÃO
-
-{
-"title": "KenzieHub Atualizado",
-"description": "Nova descrição."
-}
-Também é possível deletar um trabalho do seu perfil, utilizando este endpoint:
-
-DELETE /users/works/:work_id
-
-Não é necessário um corpo da requisição.
-Atualizando os dados do perfil
-Assim como os endpoints de tecnologias e trabalhos, nesse precisamos estar logados, com o token no cabeçalho da requisição. Estes endpoints são para atualizar seus dados como, foto de perfil, nome, ou qualquer outra informação em relação ao que foi utilizado na criação do usuário.
-
-Endpoint para atualizar a foto de perfil:
-
-PATCH /users/avatar - FORMATO DA REQUISIÇÃO
-
-avatar: <Arquivo de imagem>
-Nesse endpoint podemos atualizar qualquer dado do usuário, e a senha também, porém é necessário enviar a antiga senha no campo "old_password" caso o usuário queira atualizar a senha.
-
-PUT /profile - FORMATO DA REQUISIÇÃO
-
-{
-"name": "Gabriel Araujo",
-"contact": "linkedin/araujooj",
-"old_password": "123456",
-"password": "123456789"
-}
-Feito com ♥ by araujooj 👋
-
-````
-
 ```
 
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 201`
+
+```json
+{
+  "userId": 1,
+  "teamId": 1,
+  "name": "Ronaldo",
+  "age": 35,
+  "avatar": "url",
+  "contact": "519999999",
+  "position": null,
+  "id": 2
+}
 ```
 
+<h2 align ='center'> Atualizar dados do jogador </h2>
+
+`POST /players/:id`
+
+Para atualizar os dados de um jogador, envie uma requisição /PATCH para a rota url/players/:id onde o "id" é o id do jogador.
+
+Envie no corpo da requisição:
+
+```json
+{
+  "userId": "id do usuário"
+  // E outros campos que serão alterados
+}
 ```
 
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 200`
+
+```json
+{
+  "userId": 1,
+  "teamId": 1,
+  "name": "Rivaldo",
+  "age": 35,
+  "avatar": "url",
+  "contact": "21987654321",
+  "position": "Atacante",
+  "id": 2
+}
 ```
-````
+
+<h2 align ='center'> Excluir jogador </h2>
+
+`POST /players/:id`
+
+Para deletar um jogador em um time, envie uma requisição /DELETE para a rota url/players/:id onde o "id" é o id do jogador.
+
+Envie no corpo da requisição:
+
+```json
+{
+  "userId": "id do usuário"
+}
+```
+
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 200`
+
+```json
+{}
+```
+
+<h2 align ='center'> Criar novo torneio </h2>
+
+`POST /tournaments`
+
+Para criar um torneio, envie uma requisição /POST para a rota url/tournaments.
+
+Envie no corpo da requisição:
+
+```json
+{
+  "userId": "id do usuário que criou o torneio",
+  "name": "nome do torneio",
+  "type": "tipo do torneio",
+  "numberOfTeams": "número de times do torneio",
+  "champion": null
+}
+```
+
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 201`
+
+```json
+{
+  "userId": 2,
+  "name": "Kenzie Copa",
+  "type": "Qualifiers",
+  "numberOfTeams": 8,
+  "champion": null,
+  "id": 2
+}
+```
+
+<h2 align ='center'> Atualizar dados do torneio </h2>
+
+`POST /tournaments/:id`
+
+Para atualizar um torneio, envie uma requisição /PATCH para a rota url/tournaments/idDoTorneio.
+
+Envie no corpo da requisição:
+
+```json
+{
+  "userId": "id do usuário que criou o torneio"
+  // E outros campos que serão alterados
+}
+```
+
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 200`
+
+```json
+{
+  "userId": 2,
+  "name": "Kenzie Master Cup",
+  "type": "Qualifiers",
+  "numberOfTeams": 8,
+  "champion": null,
+  "id": 2
+}
+```
+
+<h2 align ='center'> Excluir torneio </h2>
+
+`POST /tournaments/:id`
+
+Para deletar um torneio, envie uma requisição /DELETE para a rota url/tournaments/:id onde o "id" é o id do torneio.
+
+Envie no corpo da requisição:
+
+```json
+{
+  "userId": "id do usuário"
+}
+```
+
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 200`
+
+```json
+{}
+```
+
+<h2 align ='center'> Criar nova partida </h2>
+
+`POST /matches`
+
+Para criar uma partida, envie uma requisição /POST para a rota url/matches.
+
+Envie no corpo da requisição:
+
+```json
+{
+  "userId": "id do usuário",
+  "tournament": "id do torneio",
+  "order": "ordem da partida",
+  "teamA": null,
+  "teamB": null,
+  "winner": null,
+  "score": {
+    "regular": {
+      "teamA": null,
+      "teamB": null
+    },
+    "penalties": {
+      "teamA": null,
+      "teamB": null
+    }
+  }
+}
+```
+
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 201`
+
+```json
+{
+  "userId": 2,
+  "tournament": 2,
+  "order": 1,
+  "teamA": null,
+  "teamB": null,
+  "winner": null,
+  "score": {
+    "regular": {
+      "teamA": null,
+      "teamB": null
+    },
+    "penalties": {
+      "teamA": null,
+      "teamB": null
+    }
+  },
+  "id": 8
+}
+```
+
+<h2 align ='center'> Atualizar dados da partida </h2>
+
+`POST /matches/:id`
+
+Para atualizar uma partida, envie uma requisição /PATCH para a rota url/matches/:id onde o "id" é o id da partida.
+
+Envie no corpo da requisição:
+
+```json
+{
+  "userId": "id do usuário"
+  // E outros campos que serão alterados
+}
+```
+
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 200`
+
+```json
+{
+  "userId": 2,
+  "tournament": 2,
+  "order": 1,
+  "teamA": 5,
+  "teamB": 2,
+  "winner": 1,
+  "score": {
+    "regular": {
+      "teamA": 3,
+      "teamB": 3
+    },
+    "penalties": {
+      "teamA": 4,
+      "teamB": 3
+    }
+  },
+  "id": 8
+}
+```
+
+<h2 align ='center'> Excluir partida </h2>
+
+`POST /tournaments/:id`
+
+Para deletar uma partida, envie uma requisição /DELETE para a rota url/matches/:id onde o ":id" é o id da partida.
+
+Envie no corpo da requisição:
+
+```json
+{
+  "userId": "id do usuário"
+}
+```
+
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 200`
+
+```json
+{}
+```
+
+<h2 align ='center'> Criar pedido de inscrição no torneio </h2>
+
+`POST /subscriptions`
+
+Para um time pedir para participar de um torneio, é necessário enviar uma requisição /POST para a rota url/subscriptions/.
+
+Envie no corpo da requisição:
+
+```json
+{
+  "tournamentId": "id do torneio",
+  "teamId": "id do time",
+  "accepted": false
+}
+```
+
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 201`
+
+```json
+{
+  "tournamentId": 1,
+  "teamId": 2,
+  "accepted": false,
+  "id": 3
+}
+```
+
+<h2 align ='center'> Atualizar dados do pedido de inscrição no torneio </h2>
+
+`POST /subscriptions/:id`
+
+Para aceitar um pedido de inscrição, é necessário enviar uma requisição /PATCH para a rota url/subscriptions/:id onde ":id" é o id do pedido.
+
+Envie no corpo da requisição:
+
+```json
+{
+  "accepted": true
+}
+```
+
+Caso dê tudo certo, a resposta será assim:
+
+`STATUS 200`
+
+```json
+{
+  "tournament": 1,
+  "teamId": 2,
+  "accepted": true,
+  "id": 2
+}
+```
