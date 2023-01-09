@@ -47,7 +47,7 @@ Caso dê tudo certo, a resposta será assim:
   "name": "Admin",
   "number": 988584074,
   "id": 1,
-  "myTeam": null
+  "teamId": null
 }
 ```
 
@@ -77,7 +77,7 @@ Caso dê tudo certo, a resposta será assim:
     "email": "user@test.com",
     "name": "Test User",
     "contact": "127.0.0.1",
-    "myTeam": null,
+    "teamId": null,
     "id": 3
   }
 }
@@ -127,9 +127,6 @@ Caso dê tudo certo, a resposta será assim:
   "userId": 2,
   "teamId": 2,
   "name": "Luisito Suarez",
-  "age": 35,
-  "avatar": "url",
-  "contact": "519999999",
   "position": null,
   "id": 2
 }
@@ -255,7 +252,7 @@ Caso dê tudo certo, a resposta será assim:
   "password": "$2a$10$hNWFIn/NDxV8KTm62CkE/uQ3FHiNVy.kvYFybgQKW07Gp1VxhxRJq",
   "name": "Test User",
   "contact": "127.0.0.1",
-  "myTeam": 1,
+  "teamId": 1,
   "id": 3
 }
 ```
@@ -284,7 +281,7 @@ Caso dê tudo certo, a resposta será assim:
   "password": "$2a$10$hNWFIn/NDxV8KTm62CkE/uQ3FHiNVy.kvYFybgQKW07Gp1VxhxRJq",
   "name": "Test User",
   "contact": "127.0.0.1",
-  "myTeam": 1,
+  "teamId": 1,
   "id": 2
 }
 ```
@@ -372,7 +369,7 @@ ATENÇÃO: Logo em seguida, envie uma requisição `Update User's Team`, com o c
 
 ```json
 {
-  "myTeam": null
+  "teamId": null
 }
 ```
 
