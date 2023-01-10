@@ -66,25 +66,9 @@
       "userId": 2,
       "teamId": 1,
       "name": "Tsunoda",
-      "age": 32,
-      "contact": "(21) 4002-8922",
-      "position": "MC"
-    },
-    {
-      "userId": 2,
-      "teamId": 1,
-      "name": "Alex",
-      "age": 35,
-      "contact": "(41) 8407-4070",
-      "position": "MD"
-    },
-    {
-      "userId": 2,
-      "teamId": 1,
-      "name": "O Mago do CSS vulgo Bertoldo",
-      "age": 31,
-      "contact": "(51) 666-6969",
-      "position": "ME"
+      "number": "10",
+      "position": "MC",
+      "id": 1
     }
   ],
   "tournaments": [
