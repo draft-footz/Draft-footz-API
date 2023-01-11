@@ -673,7 +673,10 @@ Envie no corpo da requisição:
 ```json
 {
   "tournamentId": "id do torneio",
-  "teamId": "id do time",
+  "team": {
+    "name": "nome do time"
+    "teamId": "id do time"
+  },
   "accepted": false
 }
 ```
@@ -685,7 +688,10 @@ Caso dê tudo certo, a resposta será assim:
 ```json
 {
   "tournamentId": 1,
-  "teamId": 2,
+  "team": {
+    "name": "Kenzie FC"
+    "teamId": 1
+  },
   "accepted": false,
   "id": 3
 }
