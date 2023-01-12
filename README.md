@@ -128,6 +128,7 @@ Caso dê tudo certo, a resposta será assim:
   "teamId": 2,
   "name": "Luisito Suarez",
   "position": null,
+  "number": 10,
   "id": 2
 }
 ```
@@ -136,7 +137,7 @@ Caso dê tudo certo, a resposta será assim:
 
 `GET /tournaments - FORMATO DA RESPOSTA - STATUS 200`
 
-PPara obter todos os torneios, envie uma requisição /GET para a rota url/tournaments.
+Para obter todos os torneios, envie uma requisição /GET para a rota url/tournaments.
 
 Caso bem sucedido o retorno da requisição será um array com todos os torneios.
 
@@ -672,7 +673,10 @@ Envie no corpo da requisição:
 ```json
 {
   "tournamentId": "id do torneio",
-  "teamId": "id do time",
+  "team": {
+    "name": "nome do time"
+    "teamId": "id do time"
+  },
   "accepted": false
 }
 ```
@@ -684,7 +688,10 @@ Caso dê tudo certo, a resposta será assim:
 ```json
 {
   "tournamentId": 1,
-  "teamId": 2,
+  "team": {
+    "name": "Kenzie FC"
+    "teamId": 1
+  },
   "accepted": false,
   "id": 3
 }
