@@ -5,7 +5,7 @@
       "password": "$2a$10$f9m74wioTi4.u3ZdtuBkueBeZLoXSltGbkobBWBeben/oC0364vH2",
       "name": "Test User",
       "contact": "(XX) 9XXXX-XXXX",
-      "teamId": null,
+      "teamId": 4,
       "id": 1
     },
     {
@@ -30,7 +30,8 @@
       "name": "Test User",
       "contact": "40028922",
       "myTeam": null,
-      "id": 4
+      "id": 4,
+      "teamId": 5
     },
     {
       "email": "renan2@mail.com",
@@ -39,6 +40,42 @@
       "contact": "(XX) 9XXXX-XXXX",
       "teamId": 1,
       "id": 5
+    },
+    {
+      "email": "test123@mail.com",
+      "password": "$2a$10$CBnISiWGO3hGpX9q.41fZ.EPgGBRBB9sIOVFi4CSsHiwYiNTXB5qS",
+      "name": "Mr. Kenzie",
+      "contact": "(XX) 9XXXX-XXXX",
+      "teamId": 1,
+      "id": 7
+    },
+    {
+      "email": "teste1@mail.com",
+      "password": "$2a$10$IQOkhMfG/yhLN.6GdPwDROM3AGvYCgFvZM/hXLkMITAFAh2cB/zxK",
+      "name": "Neymar Jr",
+      "contact": "40028922",
+      "myTeam": null,
+      "id": 8,
+      "teamId": 7
+    },
+    {
+      "email": "teste5@mail.com",
+      "password": "$2a$10$kGjHEXO6HcG4BAgsmsyah.0d1QC..jstj2P4zKdXR61KdQ7Jxz2r.",
+      "name": "Neymar Pai",
+      "contact": "40028922",
+      "myTeam": null,
+      "id": 9,
+      "teamId": 8
+    },
+    {
+      "email": "neneiilson@gmail.com",
+      "password": "$2a$10$767414ziUzdWCq6bIVz9ceYIpk6FngqgQE2FhZQeYF.CTJGSguYfO",
+      "name": "NegoNey",
+      "username": "nei",
+      "passwordConfirmation": "121298@Nei",
+      "contact": "(75) 98858-4074",
+      "id": 10,
+      "teamId": 9
     }
   ],
   "teams": [
@@ -59,44 +96,213 @@
       "name": "Os Crias",
       "logo": "https://www.lance.com.br/galerias/wp-content/uploads/2021/10/2-Cristiano-Ronaldo-849x474.jpg",
       "id": 3
+    },
+    {
+      "name": "Grêmio FBPA",
+      "logo": "https://imgs.search.brave.com/mJvlBdcuDYrqotqBBz28XhR6viUPOOoSxpr9TxNtqEc/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5Z/LXpkNGc1MzFmdFo3/blBQcXlkcFR3SGFI/YSZwaWQ9QXBp",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "name": "Manchester Site",
+      "logo": "https://wearejoga.com/blog/wp-content/uploads/2019/12/benef%C3%ADcios-da-embaixadinha-530x282.jpg",
+      "userId": 4,
+      "id": 5
+    },
+    {
+      "name": "Barsemlona",
+      "logo": "https://pbs.twimg.com/profile_images/769158403390369792/ielszqH5_400x400.jpg",
+      "userId": 8,
+      "id": 7
+    },
+    {
+      "name": "Perna de pau fc",
+      "logo": "https://wearejoga.com/blog/wp-content/uploads/2019/12/benef%C3%ADcios-da-embaixadinha-530x282.jpg",
+      "userId": 9,
+      "id": 8
+    },
+    {
+      "name": "Ganhador",
+      "logo": "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/08/GettyImages-1352777014-e1660308940973.jpg?w=876&h=484&crop=1",
+      "userId": 10,
+      "id": 9
     }
   ],
   "players": [
     {
-      "userId": 2,
+      "name": "Neymar",
+      "position": "Atacante",
+      "number": "10",
+      "userId": 7,
       "teamId": 1,
-      "name": "Tsunoda",
-      "age": 32,
-      "contact": "(21) 4002-8922",
-      "position": "MC"
+      "id": 2
     },
     {
-      "userId": 2,
+      "name": "Robinho",
+      "position": "Atacante",
+      "number": "7",
+      "userId": 7,
       "teamId": 1,
-      "name": "Alex",
-      "age": 35,
-      "contact": "(41) 8407-4070",
-      "position": "MD"
+      "id": 3
     },
     {
-      "userId": 2,
+      "name": "Ribamar",
+      "position": "Meia",
+      "number": "11",
+      "userId": 8,
+      "teamId": 7,
+      "id": 4
+    },
+    {
+      "name": "Ericker Ralander",
+      "position": "Atacante",
+      "number": "9",
+      "userId": 8,
+      "teamId": 7,
+      "id": 5
+    },
+    {
+      "name": "Ronaldinho",
+      "position": "Goleiro",
+      "number": "49",
+      "userId": 8,
+      "teamId": 7,
+      "id": 6
+    },
+    {
+      "name": "Sergio",
+      "position": "Zagueiro",
+      "number": "30",
+      "userId": 8,
+      "teamId": 7,
+      "id": 7
+    },
+    {
+      "name": "Lionel Pepsi",
+      "position": "Meia",
+      "number": "10",
+      "userId": 8,
+      "teamId": 7,
+      "id": 8
+    },
+    {
+      "name": "Cerrote 7",
+      "position": "Lateral Direito",
+      "number": "12",
+      "userId": 8,
+      "teamId": 7,
+      "id": 9
+    },
+    {
+      "name": "Daniel Alves",
+      "position": "Lateral Esquerdo",
+      "number": "51",
+      "userId": 8,
+      "teamId": 7,
+      "id": 10
+    },
+    {
+      "name": "Monstro",
+      "position": "Atacante",
+      "number": "9",
+      "userId": 10,
+      "teamId": 9,
+      "id": 11
+    },
+    {
+      "name": "PEGA TUDO",
+      "position": "Goleiro",
+      "number": "1",
+      "userId": 10,
+      "teamId": 9,
+      "id": 12
+    },
+    {
+      "name": "Dani Alves kkk",
+      "position": "Lateral Direito",
+      "number": "2",
+      "userId": 10,
+      "teamId": 9,
+      "id": 13
+    },
+    {
+      "name": "Cara Ruim",
+      "position": "Zagueiro",
+      "number": "4",
+      "userId": 10,
+      "teamId": 9,
+      "id": 14
+    },
+    {
+      "name": "Talentoso",
+      "position": "Meia Esquerda",
+      "number": "7",
+      "userId": 10,
+      "teamId": 9,
+      "id": 15
+    },
+    {
+      "name": "Dida",
+      "position": "Goleiro",
+      "number": "1",
+      "userId": 7,
       "teamId": 1,
-      "name": "O Mago do CSS vulgo Bertoldo",
-      "age": 31,
-      "contact": "(51) 666-6969",
-      "position": "ME"
+      "id": 16
     }
   ],
   "tournaments": [
     {
-      "name": "Copa Kenzie",
-      "champion": null,
-      "userId": 2,
+      "name": "Torneio de Testes",
+      "userId": 7,
+      "userName": "Mr. Kenzie",
       "type": "qualifiers",
       "numberOfTeams": 8,
       "id": 1
     }
   ],
-  "matches": [],
+  "matches": [
+    {
+      "userId": 7,
+      "tournamentId": 1,
+      "order": 1,
+      "id": 1
+    },
+    {
+      "userId": 7,
+      "tournamentId": 1,
+      "order": 3,
+      "id": 2
+    },
+    {
+      "userId": 7,
+      "tournamentId": 1,
+      "order": 7,
+      "id": 3
+    },
+    {
+      "userId": 7,
+      "tournamentId": 1,
+      "order": 2,
+      "id": 4
+    },
+    {
+      "userId": 7,
+      "tournamentId": 1,
+      "order": 4,
+      "id": 5
+    },
+    {
+      "userId": 7,
+      "tournamentId": 1,
+      "order": 5,
+      "id": 6
+    },
+    {
+      "userId": 7,
+      "tournamentId": 1,
+      "order": 6,
+      "id": 7
+    }
+  ],
   "subscriptions": []
 }
